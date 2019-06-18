@@ -2,13 +2,13 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const session = require('express-session')
-const dbConnection = require('./database') 
+const dbConnection = require('./database')
 const MongoStore = require('connect-mongo')(session)
 const passport = require('./passport');
 const home = require("./routes/home")
 const productView = require('./routes/productView')
 const app = express()
-const PORT = 8080
+const PORT = process.env.PORT || 8080
 // Route requires
 const user = require('./routes/user')
 
@@ -38,8 +38,8 @@ app.use(passport.session()) // calls the deserializeUser
 
 // Routes
 app.use('/', user)
-app.use('/home',home)
-app.use('/productView',productView)
+app.use('/home', home)
+app.use('/productView', productView)
 
 
 // Starting Server 
