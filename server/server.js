@@ -8,7 +8,7 @@ const passport = require('./passport');
 const home = require("./routes/home")
 const productView = require('./routes/productView')
 const app = express()
-const PORT = process.env.PORT || 8080
+const port = "https://pure-sea-45131.herokuapp.com/" || 8080
 // Route requires
 const user = require('./routes/user')
 
@@ -43,6 +43,6 @@ app.use('/productView', productView)
 
 
 // Starting Server 
-app.listen(PORT, () => {
-	console.log(`App listening on PORT: ${PORT}`)
+app.listen(port, () => {
+	console.log(`App listening on PORT: ${port}`)
 })
