@@ -11,6 +11,8 @@ const app = express()
 const port = "https://pure-sea-45131.herokuapp.com/" || 8080
 // Route requires
 const user = require('./routes/user')
+var cors = require('cors');
+app.use(cors());
 
 // MIDDLEWARE
 app.use(morgan('dev'))
